@@ -1,0 +1,24 @@
+<html>
+
+<body>
+    <h1>My todolist</h1>
+    <form action="/todo/add" method="post">
+        <p>
+            <label for="addtoddo">What Should I do ?</label>
+            <input type="text" name="text" id="text" autofocus />
+            <input type="submit" value="Add a todo">
+        </p>
+        <ul>
+            <% todos.map((todo)=>{ %>
+                <li>
+                    <%= todo.id %>.
+                        <%= todo.text %>
+
+                            <a href="/todo/delete/<%= todo.id %>">x</a>
+                </li>
+                <% }) %>
+        </ul>
+    </form>
+</body>
+
+</html>
